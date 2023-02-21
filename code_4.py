@@ -3,7 +3,7 @@ import pandas as pd
 
 
 def get_big_mac_price_by_year(year,country_code):
-    query1 = f"(iso_a3 == {country_code.upper()} and date >= '{year}-01-01' and date <= '{year}-12-31'"
+    query1 = f"iso_a3 == {country_code.upper()} and date >= '{year}-01-01' and date <= '{year}-12-31'"
     pby = df.query(query1)
     pby['dollar_price'].mean()
     print(round(pby['dollar_price'].mean()),2)
