@@ -1,6 +1,7 @@
 #import csv
 import pandas as pd
-
+big_mac_file = './big-mac-full-index.csv'
+df = pd.read_csv(big_mac_file)
 
 def get_big_mac_price_by_year(year,country_code):
     query1 = f"iso_a3 == {country_code.upper()} and date >= '{year}-01-01' and date <= '{year}-12-31'"
@@ -30,6 +31,8 @@ def get_the_most_expensive_big_mac_price_by_year(year):
     print(f"{max_price['name']}({max_price['iso_a3']}): ${round(max_price['dollar_price'],2)}")
 
 if __name__ == "__main__":
-    big_mac_file = './big-mac-full-index.csv'
-    df = pd.read_csv(big_mac_file)
+    print(get_big_mac_price_by_year(2008,'jpn'))
+'''    
+
     get_big_mac_price_by_year(2008,'arg')
+'''
