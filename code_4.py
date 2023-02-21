@@ -11,7 +11,7 @@ def get_big_mac_price_by_year(year,country_code):
 
 def get_big_mac_price_by_country(country_code):
     country_code = country_code.upper()
-    query1 = f"(iso_a3 == {country_code})"
+    query1 = f"(iso_a3 == '{country_code}')"
     pby = df.query(query1)
     print(round(pby['dollar_price'].mean(),2))
 
